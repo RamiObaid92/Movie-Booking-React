@@ -1,5 +1,3 @@
-
-
 const Movieselector = () => {
   return (
     <div className="movie-container">
