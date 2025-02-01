@@ -1,32 +1,206 @@
 {
-    "movies": [
-        {
-            "movieid": 1,
-            "title": "Inception",
-            "year": 2010,
-            "price": 10
-        },
-        {
-            "movieid": 2,
-            "title": "The Matrix",
-            "year": 1999,
-            "price": 8
-        }
-    ],
-    "bookings": [
-        {
-            "bookingid": 1,
-            "name": "John Doe",
-            "phone": "123-456-7890",
-            "movieid": 1,
-            "seat": "A1"
-        },
-        {
-            "bookingid": 2,
-            "name": "Jane Smith",
-            "phone": "987-654-3210",
-            "movieid": 2,
-            "seat": "A1"
-        }
-    ]
+  "movies": [
+    {
+      "movieid": 1,
+      "title": "Inception",
+      "year": 2010,
+      "price": 90
+    },
+    {
+      "movieid": 2,
+      "title": "The Matrix",
+      "year": 1999,
+      "price": 120
+    },
+    {
+      "movieid": 3,
+      "title": "Interstellar",
+      "year": 2014,
+      "price": 100
+    },
+    {
+      "movieid": 4,
+      "title": "The Dark Knight",
+      "year": 2008,
+      "price": 110
+    },
+    {
+      "movieid": 5,
+      "title": "Avatar",
+      "year": 2009,
+      "price": 130
+    },
+    {
+      "movieid": 6,
+      "title": "Titanic",
+      "year": 1997,
+      "price": 80
+    },
+    {
+      "movieid": 7,
+      "title": "Jurassic Park",
+      "year": 1993,
+      "price": 70
+    },
+    {
+      "movieid": 8,
+      "title": "The Lion King",
+      "year": 1994,
+      "price": 60
+    },
+    {
+      "movieid": 9,
+      "title": "Forrest Gump",
+      "year": 1994,
+      "price": 85
+    },
+    {
+      "movieid": 10,
+      "title": "Gladiator",
+      "year": 2000,
+      "price": 95
+    }
+  ],
+  "bookings": [
+    {
+      "bookingid": 1,
+      "name": "John Doe",
+      "phone": "123-456-7890",
+      "movieid": 1,
+      "seat": "A1"
+    },
+    {
+      "bookingid": 2,
+      "name": "Jane Smith",
+      "phone": "987-654-3210",
+      "movieid": 1,
+      "seat": "A2"
+    },
+    {
+      "bookingid": 3,
+      "name": "Alice Johnson",
+      "phone": "555-123-4567",
+      "movieid": 2,
+      "seat": "B1"
+    },
+    {
+      "bookingid": 4,
+      "name": "Bob Brown",
+      "phone": "555-987-6543",
+      "movieid": 2,
+      "seat": "B2"
+    },
+    {
+      "bookingid": 5,
+      "name": "Charlie Davis",
+      "phone": "555-555-5555",
+      "movieid": 3,
+      "seat": "C1"
+    },
+    {
+      "bookingid": 6,
+      "name": "David Wilson",
+      "phone": "555-111-2222",
+      "movieid": 3,
+      "seat": "C2"
+    },
+    {
+      "bookingid": 7,
+      "name": "Eva Green",
+      "phone": "555-333-4444",
+      "movieid": 4,
+      "seat": "D1"
+    },
+    {
+      "bookingid": 8,
+      "name": "Frank White",
+      "phone": "555-666-7777",
+      "movieid": 4,
+      "seat": "D2"
+    },
+    {
+      "bookingid": 9,
+      "name": "Grace Lee",
+      "phone": "555-888-9999",
+      "movieid": 5,
+      "seat": "E1"
+    },
+    {
+      "bookingid": 10,
+      "name": "Henry Clark",
+      "phone": "555-000-1111",
+      "movieid": 5,
+      "seat": "E2"
+    },
+    {
+      "bookingid": 11,
+      "name": "Ivy Adams",
+      "phone": "555-222-3333",
+      "movieid": 1,
+      "seat": "A3"
+    },
+    {
+      "bookingid": 12,
+      "name": "Jack Black",
+      "phone": "555-444-5555",
+      "movieid": 1,
+      "seat": "A4"
+    },
+    {
+      "bookingid": 13,
+      "name": "Karen White",
+      "phone": "555-666-7777",
+      "movieid": 2,
+      "seat": "B3"
+    },
+    {
+      "bookingid": 14,
+      "name": "Larry King",
+      "phone": "555-888-9999",
+      "movieid": 2,
+      "seat": "B4"
+    },
+    {
+      "bookingid": 15,
+      "name": "Mona Lisa",
+      "phone": "555-000-1111",
+      "movieid": 3,
+      "seat": "C3"
+    },
+    {
+      "bookingid": 16,
+      "name": "Nina Brown",
+      "phone": "555-222-3333",
+      "movieid": 3,
+      "seat": "C4"
+    },
+    {
+      "bookingid": 17,
+      "name": "Oscar Wilde",
+      "phone": "555-444-5555",
+      "movieid": 4,
+      "seat": "D3"
+    },
+    {
+      "bookingid": 18,
+      "name": "Paul Newman",
+      "phone": "555-666-7777",
+      "movieid": 4,
+      "seat": "D4"
+    },
+    {
+      "bookingid": 19,
+      "name": "Quincy Jones",
+      "phone": "555-888-9999",
+      "movieid": 5,
+      "seat": "E3"
+    },
+    {
+      "bookingid": 20,
+      "name": "Rachel Green",
+      "phone": "555-000-1111",
+      "movieid": 5,
+      "seat": "E4"
+    }
+  ]
 }
