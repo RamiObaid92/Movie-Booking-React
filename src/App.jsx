@@ -1,5 +1,5 @@
 import "./App.css";
-import Movieselector from "./components/Movieselector";
+import MovieDisplay from "./components/MovieDisplay";
 import PriceDisplay from "./components/PriceDisplay";
 import SeatDisplay from "./components/SeatDisplay";
 import Showcase from "./components/Showcase";
@@ -7,7 +7,7 @@ import Showcase from "./components/Showcase";
 function App() {
   return (
     <>
-      <Movieselector />
+      <MovieDisplay />
       <Showcase />
       <SeatDisplay />
       <PriceDisplay />

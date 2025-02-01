@@ -1,4 +1,4 @@
-const Movieselector = () => {
+const MovieDisplay = () => {
   return (
     <div className="movie-container">
       <label htmlFor="movie">Pick a movie:</label>
@@ -12,4 +12,4 @@ const Movieselector = () => {
   );
 };
 
-export default Movieselector;
+export default MovieDisplay;
