@@ -1,0 +1,32 @@
+{
+    "movies": [
+        {
+            "movieid": 1,
+            "title": "Inception",
+            "year": 2010,
+            "price": 10
+        },
+        {
+            "movieid": 2,
+            "title": "The Matrix",
+            "year": 1999,
+            "price": 8
+        }
+    ],
+    "bookings": [
+        {
+            "bookingid": 1,
+            "name": "John Doe",
+            "phone": "123-456-7890",
+            "movieid": 1,
+            "seat": "A1"
+        },
+        {
+            "bookingid": 2,
+            "name": "Jane Smith",
+            "phone": "987-654-3210",
+            "movieid": 2,
+            "seat": "A1"
+        }
+    ]
+}
