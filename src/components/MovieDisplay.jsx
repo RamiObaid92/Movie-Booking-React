@@ -1,15 +1,43 @@
-const MovieDisplay = () => {
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { getMovies } from "../Data/CRUD";
+
+const MovieDisplay = ({onMovieSelect}) => {
+  const [movies, setMovies] = useState([])
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const moviesData = await getMovies();
+      setMovies(moviesData);
+    }
+
+    fetchMovies();
+  }, [])
+
+  const [selectedMovie, setSelectedMovie] = useState(null)
+
+  const handleChange = (e) => {
+    const movieId = e.target.value;
+    setSelectedMovie(movieId);
+    onMovieSelect(movieId)
+  }
+
   return (
     <div className="movie-container">
       <label htmlFor="movie">Pick a movie:</label>
-      <select name="movie" id="movie">
-        <option value="100">Fast and furious 6 (100 kr)</option>
-        <option value="50">The mummy returns (50 kr)</option>
-        <option value="70">Jumanji: Welcome to the Jungle (70 kr)</option>
-        <option value="40">Rampage (40 kr)</option>
+      <select id="movie" onChange={handleChange} value={selectedMovie || ""}>
+        {movies.map((movie) => (
+          <option key={movie.id}value={movie.id}>
+            {movie.title} ({movie.price} kr)
+          </option>
+        ))}
       </select>
     </div>
   );
+};
+
+MovieDisplay.propTypes = {
+  onMovieSelect: PropTypes.func.isRequired
 };
 
 export default MovieDisplay;
