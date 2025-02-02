@@ -8,7 +8,7 @@ import { getMovies } from "./Data/CRUD";
 function App() {
   const [movies, setMovies] = useState([]);
   const [selectedMovieId, setSelectedMovieId] = useState(null);
-  
+
   useEffect(() => {
     const fetchMovies = async () => {
       const moviesData = await getMovies();
@@ -24,7 +24,6 @@ function App() {
   const handleMovieSelect = useCallback((movieId) => {
     setSelectedMovieId(movieId);
   }, []);
-
 
   return (
     <>
