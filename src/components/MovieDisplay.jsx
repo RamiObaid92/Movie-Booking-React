@@ -1,31 +1,15 @@
-import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { getMovies } from "../Data/CRUD";
 
-const MovieDisplay = ({ onMovieSelect }) => {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const moviesData = await getMovies();
-      setMovies(moviesData);
-    };
-
-    fetchMovies();
-  }, []);
-
-  const [selectedMovie, setSelectedMovie] = useState(null);
-
+const MovieDisplay = ({ movies, selectedMovieId, onMovieSelect }) => {
   const handleChange = (e) => {
-    const movieId = e.target.value;
-    setSelectedMovie(movieId);
+    const movieId = Number(e.target.value);
     onMovieSelect(movieId);
   };
 
   return (
     <div className="movie-container">
       <label htmlFor="movie">Pick a movie:</label>
-      <select id="movie" onChange={handleChange} value={selectedMovie || ""}>
+      <select id="movie" onChange={handleChange} value={selectedMovieId ?? ""}>
         {movies.map((movie) => (
           <option key={movie.id} value={movie.id}>
             {movie.title} ({movie.price} kr)
@@ -37,6 +21,8 @@ const MovieDisplay = ({ onMovieSelect }) => {
 };
 
 MovieDisplay.propTypes = {
+  movies: PropTypes.array.isRequired,
+  selectedMovieId: PropTypes.number,
   onMovieSelect: PropTypes.func.isRequired,
 };
 

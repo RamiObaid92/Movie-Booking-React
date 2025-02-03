@@ -27,7 +27,11 @@ function App() {
 
   return (
     <>
-      <MovieDisplay movies={movies} onMovieSelect={handleMovieSelect} />
+      <MovieDisplay
+        movies={movies}
+        onMovieSelect={handleMovieSelect}
+        selectedMovieId={selectedMovieId}
+      />
       <Showcase />
       <SeatDisplay movieId={selectedMovieId} />
       <PriceDisplay />
