@@ -1,6 +1,6 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { getMovies } from "../Data/CRUD";
+import { getMovies } from "./CRUD";
 
 const MovieContext = createContext();
 

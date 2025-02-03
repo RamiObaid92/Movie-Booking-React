@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { getBookings } from "../Data/CRUD";
-import { MovieContext } from "./MovieContext";
+import { MovieContext } from "../Data/MovieContext";
 
 const SeatDisplay = () => {
   const seatLayout = [

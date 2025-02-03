@@ -1,4 +1,4 @@
-import { MovieProvider } from "./components/MovieContext";
+import { MovieProvider } from "./Data/MovieContext";
 import MovieDisplay from "./components/MovieDisplay";
 import PriceDisplay from "./components/PriceDisplay";
 import SeatDisplay from "./components/SeatDisplay";
