@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { MovieContext } from "../Data/MovieContext";
 
-
-
 const MovieDisplay = () => {
-  const { movies, selectedMovieId, setSelectedMovieId } = useContext(MovieContext);
+  const { movies, selectedMovieId, setSelectedMovieId } =
+    useContext(MovieContext);
 
   const handleChange = (e) => {
     const movieId = Number(e.target.value);
@@ -23,6 +22,6 @@ const MovieDisplay = () => {
       </select>
     </div>
   );
-}
+};
 
 export default MovieDisplay;

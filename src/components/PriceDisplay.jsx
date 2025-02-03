@@ -9,8 +9,8 @@ function PriceDisplay() {
 
   return (
     <p className="text">
-      You have selected <span id="count">{count}</span> seats 
-      for a price of $<span id="total">{total}</span>
+      You have selected <span id="count">{count}</span> seats for a price of $
+      <span id="total">{total}</span>
     </p>
   );
 }

@@ -5,48 +5,47 @@ import { getMovies } from "./CRUD";
 const MovieContext = createContext();
 
 const MovieProvider = ({ children }) => {
-    const [movies, setMovies] = useState([]);
-    const [selectedMovieId, setSelectedMovieId] = useState(null);
+  const [movies, setMovies] = useState([]);
+  const [selectedMovieId, setSelectedMovieId] = useState(null);
 
-    const [selectedSeats, setSelectedSeats] = useState([]);
-  
-    useEffect(() => {
-      const fetchMovies = async () => {
-        const moviesData = await getMovies();
-        setMovies(moviesData);
-        if (moviesData.length > 0) {
-          setSelectedMovieId(moviesData[0].id);
-        }
-      };
-  
-      fetchMovies();
-    }, []);
+  const [selectedSeats, setSelectedSeats] = useState([]);
 
-    const getTotalPrice = () => {
-      const movie = movies.find((m) => m.id === selectedMovieId);
-      if (!movie) return 0;
-      return movie.price * selectedSeats.length;
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const moviesData = await getMovies();
+      setMovies(moviesData);
+      if (moviesData.length > 0) {
+        setSelectedMovieId(moviesData[0].id);
+      }
     };
 
+    fetchMovies();
+  }, []);
 
-      const contextValue = {
-        movies,
-        selectedMovieId,
-        setSelectedMovieId,
-        selectedSeats,
-        setSelectedSeats,
-        getTotalPrice
-      };
-
-      return (
-        <MovieContext.Provider value={contextValue}>
-          {children}
-        </MovieContext.Provider>
-      );
-}
-
-MovieProvider.propTypes = {
-    children: PropTypes.node.isRequired,
+  const getTotalPrice = () => {
+    const movie = movies.find((m) => m.id === selectedMovieId);
+    if (!movie) return 0;
+    return movie.price * selectedSeats.length;
   };
 
-export { MovieProvider, MovieContext }
+  const contextValue = {
+    movies,
+    selectedMovieId,
+    setSelectedMovieId,
+    selectedSeats,
+    setSelectedSeats,
+    getTotalPrice,
+  };
+
+  return (
+    <MovieContext.Provider value={contextValue}>
+      {children}
+    </MovieContext.Provider>
+  );
+};
+
+MovieProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export { MovieProvider, MovieContext };

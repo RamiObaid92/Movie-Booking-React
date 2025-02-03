@@ -12,7 +12,8 @@ const SeatDisplay = () => {
     ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"],
   ];
 
-  const { selectedMovieId, selectedSeats, setSelectedSeats } = useContext(MovieContext);
+  const { selectedMovieId, selectedSeats, setSelectedSeats } =
+    useContext(MovieContext);
 
   const [bookedSeats, setBookedSeats] = useState([]);
 
@@ -35,7 +36,7 @@ const SeatDisplay = () => {
     setSelectedSeats((prev) =>
       prev.includes(seatName)
         ? prev.filter((s) => s !== seatName)
-        : [...prev, seatName]
+        : [...prev, seatName],
     );
   };
 
@@ -64,6 +65,5 @@ const SeatDisplay = () => {
     </div>
   );
 };
-
 
 export default SeatDisplay;

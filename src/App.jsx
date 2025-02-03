@@ -5,15 +5,14 @@ import SeatDisplay from "./components/SeatDisplay";
 import Showcase from "./components/Showcase";
 
 function App() {
-
   return (
     <>
-    <MovieProvider>
-      <MovieDisplay/>
-      <Showcase />
-      <SeatDisplay/>
-      <PriceDisplay />
-    </MovieProvider>
+      <MovieProvider>
+        <MovieDisplay />
+        <Showcase />
+        <SeatDisplay />
+        <PriceDisplay />
+      </MovieProvider>
     </>
   );
 }
