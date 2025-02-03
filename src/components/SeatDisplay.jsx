@@ -22,7 +22,7 @@ const SeatDisplay = ({ movieId }) => {
 
     const fetchSeats = async () => {
       const seatsData = await getBookings(movieId);
-      setBookedSeats(seatsData.map((booking) => booking.seat));
+      setBookedSeats(seatsData.flatMap((booking) => booking.seat));
     };
 
     fetchSeats();
