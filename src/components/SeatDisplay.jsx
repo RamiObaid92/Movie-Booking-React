@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import { useContext, useEffect, useState } from "react";
 import { getBookings } from "../Data/CRUD";
+import { MovieContext } from "./MovieContext";
 
-const SeatDisplay = ({ movieId }) => {
+const SeatDisplay = () => {
   const seatLayout = [
     ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8"],
     ["B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8"],
@@ -12,33 +12,32 @@ const SeatDisplay = ({ movieId }) => {
     ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"],
   ];
 
+  const { selectedMovieId } = useContext(MovieContext);
+
   const [bookedSeats, setBookedSeats] = useState([]);
   const [selectedSeats, setSelectedSeats] = useState([]);
 
   useEffect(() => {
-    if (!movieId) return;
-
-    setSelectedSeats([]);
+    if (!selectedMovieId) return;
 
     const fetchSeats = async () => {
-      const seatsData = await getBookings(movieId);
+      const seatsData = await getBookings(selectedMovieId);
       setBookedSeats(seatsData.flatMap((booking) => booking.seat));
+      setSelectedSeats([]);
     };
 
     fetchSeats();
-  }, [movieId]);
+  }, [selectedMovieId]);
 
   const handleSeatClick = (seatName) => {
     if (bookedSeats.includes(seatName)) {
       return;
     }
-    setSelectedSeats((prev) => {
-      if (prev.includes(seatName)) {
-        return prev.filter((s) => s !== seatName);
-      } else {
-        return [...prev, seatName];
-      }
-    });
+    setSelectedSeats((prev) =>
+      prev.includes(seatName)
+        ? prev.filter((s) => s !== seatName)
+        : [...prev, seatName]
+    );
   };
 
   return (
@@ -48,13 +47,11 @@ const SeatDisplay = ({ movieId }) => {
         <div key={rowIndex} className="row">
           {row.map((seatName) => {
             let seatClass = "seat";
-
             if (bookedSeats.includes(seatName)) {
               seatClass += " occupied";
             } else if (selectedSeats.includes(seatName)) {
               seatClass += " selected";
             }
-
             return (
               <div
                 key={seatName}
@@ -69,8 +66,5 @@ const SeatDisplay = ({ movieId }) => {
   );
 };
 
-SeatDisplay.propTypes = {
-  movieId: PropTypes.number.isRequired,
-};
 
 export default SeatDisplay;

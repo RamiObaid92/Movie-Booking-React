@@ -1,9 +1,14 @@
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { MovieContext } from "./MovieContext";
 
-const MovieDisplay = ({ movies, selectedMovieId, onMovieSelect }) => {
+
+
+function MovieDisplay() {
+  const { movies, selectedMovieId, setSelectedMovieId } = useContext(MovieContext);
+
   const handleChange = (e) => {
     const movieId = Number(e.target.value);
-    onMovieSelect(movieId);
+    setSelectedMovieId(movieId);
   };
 
   return (
@@ -18,12 +23,6 @@ const MovieDisplay = ({ movies, selectedMovieId, onMovieSelect }) => {
       </select>
     </div>
   );
-};
-
-MovieDisplay.propTypes = {
-  movies: PropTypes.array.isRequired,
-  selectedMovieId: PropTypes.number,
-  onMovieSelect: PropTypes.func.isRequired,
-};
+}
 
 export default MovieDisplay;
