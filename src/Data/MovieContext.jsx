@@ -1,4 +1,4 @@
-import { createContext, useCallback, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { getMovies } from "./CRUD";
 
@@ -7,6 +7,8 @@ const MovieContext = createContext();
 const MovieProvider = ({ children }) => {
     const [movies, setMovies] = useState([]);
     const [selectedMovieId, setSelectedMovieId] = useState(null);
+
+    const [selectedSeats, setSelectedSeats] = useState([]);
   
     useEffect(() => {
       const fetchMovies = async () => {
@@ -20,14 +22,20 @@ const MovieProvider = ({ children }) => {
       fetchMovies();
     }, []);
 
-    const handleMovieSelect = useCallback((movieId) => {
-        setSelectedMovieId(movieId);
-      }, []);
+    const getTotalPrice = () => {
+      const movie = movies.find((m) => m.id === selectedMovieId);
+      if (!movie) return 0;
+      return movie.price * selectedSeats.length;
+    };
+
 
       const contextValue = {
         movies,
         selectedMovieId,
-        setSelectedMovieId: handleMovieSelect,
+        setSelectedMovieId,
+        selectedSeats,
+        setSelectedSeats,
+        getTotalPrice
       };
 
       return (

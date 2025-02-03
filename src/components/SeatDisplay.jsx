@@ -12,10 +12,9 @@ const SeatDisplay = () => {
     ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"],
   ];
 
-  const { selectedMovieId } = useContext(MovieContext);
+  const { selectedMovieId, selectedSeats, setSelectedSeats } = useContext(MovieContext);
 
   const [bookedSeats, setBookedSeats] = useState([]);
-  const [selectedSeats, setSelectedSeats] = useState([]);
 
   useEffect(() => {
     if (!selectedMovieId) return;
@@ -27,7 +26,7 @@ const SeatDisplay = () => {
     };
 
     fetchSeats();
-  }, [selectedMovieId]);
+  }, [selectedMovieId, setSelectedSeats]);
 
   const handleSeatClick = (seatName) => {
     if (bookedSeats.includes(seatName)) {

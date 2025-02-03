@@ -17,7 +17,7 @@ const MovieDisplay = () => {
       <select id="movie" onChange={handleChange} value={selectedMovieId ?? ""}>
         {movies.map((movie) => (
           <option key={movie.id} value={movie.id}>
-            {movie.title} ({movie.price} kr)
+            {movie.title} (${movie.price})
           </option>
         ))}
       </select>
