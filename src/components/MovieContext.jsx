@@ -4,7 +4,7 @@ import { getMovies } from "../Data/CRUD";
 
 const MovieContext = createContext();
 
-function MovieProvider({ children }) {
+const MovieProvider = ({ children }) => {
     const [movies, setMovies] = useState([]);
     const [selectedMovieId, setSelectedMovieId] = useState(null);
   

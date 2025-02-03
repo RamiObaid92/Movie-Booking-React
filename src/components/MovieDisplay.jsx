@@ -3,7 +3,7 @@ import { MovieContext } from "./MovieContext";
 
 
 
-function MovieDisplay() {
+const MovieDisplay = () => {
   const { movies, selectedMovieId, setSelectedMovieId } = useContext(MovieContext);
 
   const handleChange = (e) => {
