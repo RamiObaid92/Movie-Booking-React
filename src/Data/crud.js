@@ -8,7 +8,7 @@ const getMovies = async () => {
     const response = await axios.get(movie_URL);
     return response.data;
   } catch (error) {
-    console.error("Fel vid inhämtning av filmer", error);
+    console.error("Error fetching movies", error);
     return [];
   }
 };
@@ -18,7 +18,7 @@ const getMovie = async (id) => {
     const response = await axios.get(`${movie_URL}/${id}`);
     return response.data;
   } catch (error) {
-    console.error("Fel vid inhämtning av film", error);
+    console.error("Error fetching movie", error);
     return [];
   }
 };
@@ -28,7 +28,7 @@ const addMovie = async (movieData) => {
     const response = await axios.post(movie_URL, movieData);
     return response.data;
   } catch (error) {
-    console.error("Fel vid tillägning av film", error);
+    console.error("Error adding movie", error);
     return null;
   }
 };
@@ -38,7 +38,7 @@ const updateMovie = async (id, movieData) => {
     const response = await axios.put(`${movie_URL}/${id}`, movieData);
     return response.data;
   } catch (error) {
-    console.error("Fel vid uppdatering av film", error);
+    console.error("Error attempting to update movie", error);
     return null;
   }
 };
@@ -48,7 +48,7 @@ const deleteMovie = async (id) => {
     const response = await axios.delete(`${movie_URL}/${id}`);
     return response.data;
   } catch (error) {
-    console.error("Fel vid radering av film", error);
+    console.error("Error attempting to delete movie", error);
     return null;
   }
 };
@@ -58,7 +58,7 @@ const getBookings = async (movieId) => {
     const response = await axios.get(`${booking_URL}?movieid=${movieId}`);
     return response.data;
   } catch (error) {
-    console.error("Fel vid inhämtning av bokningar", error);
+    console.error("Error fetching booking", error);
     return [];
   }
 };
@@ -68,7 +68,7 @@ const addBooking = async (bookingData) => {
     const response = await axios.post(booking_URL, bookingData);
     return response.data;
   } catch (error) {
-    console.error("Fel vid tilläggning av bokning", error);
+    console.error("Error adding booking", error);
     return null;
   }
 };
