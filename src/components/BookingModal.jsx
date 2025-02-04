@@ -13,8 +13,8 @@ const BookingModal = () => {
   const BookingSchema = Yup.object().shape({
     name: Yup.string().required("First name is required"),
     phone: Yup.string()
-    .matches(/^\d{10}$/, "Phone-number must be 10 digits")
-    .required("Phone-number is required"),
+      .matches(/^\d{10}$/, "Phone-number must be 10 digits")
+      .required("Phone-number is required"),
   });
 
   const closeModal = () => {
@@ -26,7 +26,7 @@ const BookingModal = () => {
   };
 
   const formatPhoneNumber = (phoneNumber) => {
-    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+    const cleaned = ("" + phoneNumber).replace(/\D/g, "");
     const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
     if (match) {
       return `${match[1]}-${match[2]}-${match[3]}`;

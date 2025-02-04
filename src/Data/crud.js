@@ -6,7 +6,7 @@ const booking_URL = "http://localhost:5000/bookings";
 const getMovies = async () => {
   try {
     const response = await axios.get(movie_URL);
-    const movies = response.data.map(movie => ({
+    const movies = response.data.map((movie) => ({
       ...movie,
       id: Number(movie.id),
       price: Number(movie.price),
@@ -21,7 +21,7 @@ const getMovies = async () => {
 const getMovie = async (id) => {
   try {
     const response = await axios.get(`${movie_URL}/${id}`);
-    const movie = response.data.map(movie => ({
+    const movie = response.data.map((movie) => ({
       ...movie,
       id: Number(movie.id),
       price: Number(movie.price),
@@ -76,7 +76,8 @@ const getBookings = async (movieId) => {
 const addBooking = async (bookingData) => {
   try {
     const { data: bookings } = await axios.get(booking_URL);
-    const nextId = bookings.length > 0 ? Math.max(...bookings.map(b => b.id)) + 1 : 1;
+    const nextId =
+      bookings.length > 0 ? Math.max(...bookings.map((b) => b.id)) + 1 : 1;
 
     const newBooking = {
       ...bookingData,
