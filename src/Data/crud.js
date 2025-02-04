@@ -6,7 +6,12 @@ const booking_URL = "http://localhost:5000/bookings";
 const getMovies = async () => {
   try {
     const response = await axios.get(movie_URL);
-    return response.data;
+    const movies = response.data.map(movie => ({
+      ...movie,
+      id: Number(movie.id),
+      price: Number(movie.price),
+    }));
+    return movies;
   } catch (error) {
     console.error("Error fetching movies", error);
     return [];
@@ -16,7 +21,12 @@ const getMovies = async () => {
 const getMovie = async (id) => {
   try {
     const response = await axios.get(`${movie_URL}/${id}`);
-    return response.data;
+    const movie = response.data.map(movie => ({
+      ...movie,
+      id: Number(movie.id),
+      price: Number(movie.price),
+    }));
+    return movie;
   } catch (error) {
     console.error("Error fetching movie", error);
     return [];
@@ -65,7 +75,15 @@ const getBookings = async (movieId) => {
 
 const addBooking = async (bookingData) => {
   try {
-    const response = await axios.post(booking_URL, bookingData);
+    const { data: bookings } = await axios.get(booking_URL);
+    const nextId = bookings.length > 0 ? Math.max(...bookings.map(b => b.id)) + 1 : 1;
+
+    const newBooking = {
+      ...bookingData,
+      id: nextId,
+    };
+
+    const response = await axios.post(booking_URL, newBooking);
     return response.data;
   } catch (error) {
     console.error("Error adding booking", error);

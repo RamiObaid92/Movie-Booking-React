@@ -1,4 +1,5 @@
 import { MovieProvider } from "./Data/MovieContext";
+import BookingModal from "./components/BookingModal";
 import MovieDisplay from "./components/MovieDisplay";
 import PriceDisplay from "./components/PriceDisplay";
 import SeatDisplay from "./components/SeatDisplay";
@@ -12,6 +13,7 @@ function App() {
         <Showcase />
         <SeatDisplay />
         <PriceDisplay />
+        <BookingModal />
       </MovieProvider>
     </>
   );
