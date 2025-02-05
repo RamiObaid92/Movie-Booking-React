@@ -119,3 +119,110 @@ p.text {
 p.text span {
   color: #6feaf6;
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content, .admin-content {
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  background-color: #242333;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+}
+
+.close {
+  top: 0.75rem;
+  color: #333;
+}
+
+.close:hover {
+  color: #666;
+}
+
+.modal-content form label {
+  display: flex;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.modal-content form input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+}
+
+.modal-content p {
+  margin: 1rem 0;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.modal-content button,
+.modal-button {
+  background-color: #ccc;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.modal-button {
+  margin-top: 0.8rem;
+}
+
+.modal-content button:hover,
+.modal-button:hover {
+  background-color: #56dde7;
+}
+
+.modal-content button:disabled,
+.modal-button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.error-tooltip {
+  position: relative;
+}
+
+.error-tooltip .tooltip {
+  position: absolute;
+  top: 50%;
+  left: 105%;
+  transform: translateY(-50%);
+  background: #f66;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+#admin-button, .admin-content{
+  margin-top: 3rem;
+}
