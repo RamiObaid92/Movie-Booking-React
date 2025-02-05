@@ -6,7 +6,7 @@ const MovieContext = createContext();
 
 const MovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
-  const [selectedMovieId, setSelectedMovieId] = useState(null);
+  const [selectedMovieId, setSelectedMovieId] = useState("");
 
   const [selectedSeats, setSelectedSeats] = useState([]);
 
@@ -30,6 +30,7 @@ const MovieProvider = ({ children }) => {
 
   const contextValue = {
     movies,
+    setMovies,
     selectedMovieId,
     setSelectedMovieId,
     selectedSeats,

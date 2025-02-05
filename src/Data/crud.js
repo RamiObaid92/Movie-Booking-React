@@ -1,4 +1,5 @@
 import axios from "axios";
+import { normalizeMovie } from "./Util";
 
 const movie_URL = "http://localhost:5000/movies";
 const booking_URL = "http://localhost:5000/bookings";
@@ -8,7 +9,6 @@ const getMovies = async () => {
     const response = await axios.get(movie_URL);
     const movies = response.data.map((movie) => ({
       ...movie,
-      id: Number(movie.id),
       price: Number(movie.price),
     }));
     return movies;
@@ -23,7 +23,6 @@ const getMovie = async (id) => {
     const response = await axios.get(`${movie_URL}/${id}`);
     const movie = response.data.map((movie) => ({
       ...movie,
-      id: Number(movie.id),
       price: Number(movie.price),
     }));
     return movie;
@@ -36,7 +35,11 @@ const getMovie = async (id) => {
 const addMovie = async (movieData) => {
   try {
     const response = await axios.post(movie_URL, movieData);
-    return response.data;
+    const added = response.data;
+    return {
+      ...added,
+      price: Number(added.price),
+    };
   } catch (error) {
     console.error("Error adding movie", error);
     return null;
@@ -46,7 +49,8 @@ const addMovie = async (movieData) => {
 const updateMovie = async (id, movieData) => {
   try {
     const response = await axios.put(`${movie_URL}/${id}`, movieData);
-    return response.data;
+    const updated = response.data;
+    return normalizeMovie(updated);
   } catch (error) {
     console.error("Error attempting to update movie", error);
     return null;
