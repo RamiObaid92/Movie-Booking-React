@@ -30,10 +30,7 @@ const addMovie = async (movieData) => {
   try {
     const response = await axios.post(movie_URL, movieData);
     const added = response.data;
-    return {
-      ...added,
-      price: Number(added.price),
-    };
+    return normalizeMovie(added)
   } catch (error) {
     console.error("Error adding movie", error);
     return null;
