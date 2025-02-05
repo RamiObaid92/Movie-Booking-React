@@ -7,10 +7,7 @@ const booking_URL = "http://localhost:5000/bookings";
 const getMovies = async () => {
   try {
     const response = await axios.get(movie_URL);
-    const movies = response.data.map((movie) => ({
-      ...movie,
-      price: Number(movie.price),
-    }));
+    const movies = response.data.map(normalizeMovie);
     return movies;
   } catch (error) {
     console.error("Error fetching movies", error);
@@ -21,10 +18,7 @@ const getMovies = async () => {
 const getMovie = async (id) => {
   try {
     const response = await axios.get(`${movie_URL}/${id}`);
-    const movie = response.data.map((movie) => ({
-      ...movie,
-      price: Number(movie.price),
-    }));
+    const movie = response.data.map(normalizeMovie);
     return movie;
   } catch (error) {
     console.error("Error fetching movie", error);
