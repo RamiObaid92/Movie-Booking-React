@@ -128,11 +128,6 @@ npm run format
 
 Feel free to open issues or submit pull requests if you find bugs or want to suggest improvements. Any feedback is welcome!
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).  
-You’re free to use, modify, and distribute this project as you wish, as long as proper credit is given.
-
 ---
 
 _Enjoy the Movie Booking App!_
