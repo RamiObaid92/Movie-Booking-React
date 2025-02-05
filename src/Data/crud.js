@@ -79,17 +79,8 @@ const getBookings = async (movieId) => {
 
 const addBooking = async (bookingData) => {
   try {
-    const { data: bookings } = await axios.get(booking_URL);
-    const nextId =
-      bookings.length > 0 ? Math.max(...bookings.map((b) => b.id)) + 1 : 1;
-
-    const newBooking = {
-      ...bookingData,
-      id: nextId,
-    };
-
-    const response = await axios.post(booking_URL, newBooking);
-    return response.data;
+    const response = await axios.post(booking_URL, bookingData);
+    return response.data
   } catch (error) {
     console.error("Error adding booking", error);
     return null;
