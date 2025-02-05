@@ -12,10 +12,10 @@ A simple movie seat-booking application built with [React](https://react.dev/) a
 
 ## The project also utilizes:
 
-    Formik (for managing forms),
-    Yup (for form validation),
-    axios (for HTTP requests),
-    PropTypes (for type checking).
+- **Formik**: for managing forms.
+- **Yup**: for form validation.
+- **Axios**: for HTTP requests.
+- **Proptypes**: for type checking.
 
 ## Prerequisites
 
