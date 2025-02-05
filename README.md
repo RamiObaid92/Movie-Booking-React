@@ -4,10 +4,10 @@ A simple movie seat-booking application built with [React](https://react.dev/) a
 
 ## Features
 
-- **Movie Selection**: Fetch a list of available movies from a REST API.  
-- **Seat Selection**: Displays theater seats in rows and lets users select available seats.  
-- **Real-Time Price**: Calculates and displays the total price based on the selected seats.  
-- **Seat Booking Modal**: Prompts users for their name and phone number before confirming a booking.  
+- **Movie Selection**: Fetch a list of available movies from a REST API.
+- **Seat Selection**: Displays theater seats in rows and lets users select available seats.
+- **Real-Time Price**: Calculates and displays the total price based on the selected seats.
+- **Seat Booking Modal**: Prompts users for their name and phone number before confirming a booking.
 - **Admin Panel**: Allows adding, editing, and deleting movies from the database.
 
 ## The project also utilizes:
@@ -25,15 +25,15 @@ A simple movie seat-booking application built with [React](https://react.dev/) a
 
 ## Installation
 
-1. **Clone this repository**:  
+1. **Clone this repository**:
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
    ```
-2. **Navigate to the project folder**:  
+2. **Navigate to the project folder**:
    ```bash
    cd your-repo-name
    ```
-3. **Install dependencies**:  
+3. **Install dependencies**:
    ```bash
    npm install
    # or
@@ -43,10 +43,12 @@ A simple movie seat-booking application built with [React](https://react.dev/) a
 ## Setup the Backend
 
 The code makes requests to:
+
 ```
 http://localhost:5000/movies
 http://localhost:5000/bookings
 ```
+
 You can use [json-server](https://github.com/typicode/json-server) (or any other REST API) to serve data from a `db.json` file. For example:
 
 1. **Install json-server (if you don't already have it)**:
@@ -82,9 +84,9 @@ This will open the app at [http://localhost:5173/](http://localhost:5173/) (or w
 
 ## Usage
 
-1. **Pick a Movie**: Use the dropdown to select one of the available movies (pulled from the backend).  
-2. **Select Seats**: Click on any seat not marked “Occupied” to select it. Click again to deselect.  
-3. **Price Display**: Shows the number of seats selected and the total price (movie price × number of seats).  
+1. **Pick a Movie**: Use the dropdown to select one of the available movies (pulled from the backend).
+2. **Select Seats**: Click on any seat not marked “Occupied” to select it. Click again to deselect.
+3. **Price Display**: Shows the number of seats selected and the total price (movie price × number of seats).
 4. **Book Seats**:
    - Click the **Book Seats** button.
    - Fill in your name and a 10-digit phone number.

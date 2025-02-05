@@ -5,9 +5,9 @@ const MovieDisplay = () => {
   const { movies, selectedMovieId, setSelectedMovieId } =
     useContext(MovieContext);
 
-    const handleChange = (e) => {
-      setSelectedMovieId(e.target.value);
-    };
+  const handleChange = (e) => {
+    setSelectedMovieId(e.target.value);
+  };
 
   return (
     <div className="movie-container">

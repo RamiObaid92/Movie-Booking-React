@@ -79,14 +79,14 @@ const MovieCrud = () => {
 
   const handleDelete = async (resetForm) => {
     if (!selectedMovieId) return;
-    
+
     const result = await deleteMovie(selectedMovieId);
     if (result) {
       setMovies((prev) => prev.filter((m) => m.id !== selectedMovieId));
     } else {
       console.error("Delete failed");
     }
-    
+
     resetForm();
     setSelectedMovieId("");
   };

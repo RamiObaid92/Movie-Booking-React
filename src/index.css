@@ -132,7 +132,8 @@ p.text span {
   align-items: center;
 }
 
-.modal-content, .admin-content {
+.modal-content,
+.admin-content {
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -223,6 +224,7 @@ p.text span {
   white-space: nowrap;
 }
 
-#admin-button, .admin-content{
+#admin-button,
+.admin-content {
   margin-top: 3rem;
 }
